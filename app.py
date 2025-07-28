@@ -1,13 +1,11 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, send_file
+from datetime import datetime
+from docxtpl import DocxTemplate
+import os
+import csv
+import uuid
 
 app = Flask(__name__)
-
-@app.route('/')
-def booking_form():
-    return render_template("booking_form_2026.html")
-
-if __name__ == '__main__':
-    app.run(debug=False, port=10000)
 
 # Створюємо папки, якщо їх нема
 if not os.path.exists("generated"):
@@ -28,7 +26,7 @@ if not os.path.exists(DB_PATH):
 
 @app.route('/')
 def booking_form():
-    return render_template('form.html')
+    return render_template('form.html')  # НЕ booking_form_2026.html
 
 @app.route('/submit', methods=['POST'])
 def submit_form():
