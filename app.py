@@ -3,7 +3,6 @@ from flask import render_template
 @app.route("/")
 def index():
     return render_template("booking_form_2026.html")
-app = Flask(__name__)
 
 # Створюємо папки, якщо їх нема
 if not os.path.exists("generated"):
