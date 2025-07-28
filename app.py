@@ -26,8 +26,7 @@ if not os.path.exists(DB_PATH):
 
 @app.route('/')
 def booking_form():
-    return render_template('form.html')  # НЕ booking_form_2026.html
-
+    return render_template('booking_form_2026.html')
 @app.route('/submit', methods=['POST'])
 def submit_form():
     timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
