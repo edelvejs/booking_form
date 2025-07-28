@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Підтвердження замовлення</title>
+</head>
+<body>
+  <h2>Перевірте інформацію перед створенням рахунку</h2>
+  <ul>
+    <li><strong>Дитина:</strong> {{ data['Імя_прізвище_побатькові_дитини'] }}</li>
+    <li><strong>Представник:</strong> {{ data['Імя_прізвище_побатькові_представника_(дорослого)'] }}</li>
+    <li><strong>Табір:</strong> {{ data['назваДОТ'] }}</li>
+    <li><strong>Маршрут:</strong> {{ data['маршрут'] }}</li>
+    <li><strong>Зміна:</strong> {{ data['зміна'] }}</li>
+    <li><strong>Вартість:</strong> {{ data['вартість'] }} грн ({{ data['вартість_словами'] }})</li>
+  </ul>
+  <form action="/confirm" method="post">
+    <button type="submit">Підтвердити та отримати рахунок</button>
+  </form>
+</body>
+</html>

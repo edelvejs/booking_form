@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Адмін-панель</title>
+</head>
+<body>
+  <h2>Заявки</h2>
+  {% for dot, changes in data_sorted.items() %}
+    <h3>Табір: {{ dot }}</h3>
+    {% for change, records in changes.items() %}
+      <h4>Зміна: {{ change }}</h4>
+      <ul>
+      {% for row in records %}
+        <li>{{ row['timestamp'] }} - {{ row['child_name'] }} ({{ row['parent_name'] }}) – {{ row['route'] }} – {{ row['price'] }} грн</li>
+      {% endfor %}
+      </ul>
+    {% endfor %}
+  {% endfor %}
+</body>
+</html>

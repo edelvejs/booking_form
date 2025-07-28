@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Форма бронювання</title>
+</head>
+<body>
+  <h2>Форма бронювання</h2>
+  <form action="/preview" method="post">
+    <label>Ім’я дитини:</label><br>
+    <input type="text" name="child_name" required><br><br>
+
+    <label>Ім’я дорослого:</label><br>
+    <input type="text" name="parent_name" required><br><br>
+
+    <label>Маршрут:</label><br>
+    <select name="route">
+      {% for route in routes %}
+      <option value="{{ route }}">{{ route }}</option>
+      {% endfor %}
+    </select><br><br>
+
+    <label>Табір (ДОТ):</label><br>
+    <select name="dot">
+      {% for dot in dots %}
+      <option value="{{ dot }}">{{ dot }}</option>
+      {% endfor %}
+    </select><br><br>
+
+    <label>Зміна (дати):</label><br>
+    <input type="text" name="change_date" placeholder="Наприклад: 03.06.2025–17.06.2025" required><br><br>
+
+    <button type="submit">Далі</button>
+  </form>
+</body>
+</html>
