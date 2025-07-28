@@ -1,8 +1,13 @@
-from flask import render_template
+from flask import Flask, render_template
 
-app.route("/")
-def index():
+app = Flask(__name__)
+
+@app.route('/')
+def booking_form():
     return render_template("booking_form_2026.html")
+
+if __name__ == '__main__':
+    app.run(debug=False, port=10000)
 
 # Створюємо папки, якщо їх нема
 if not os.path.exists("generated"):
